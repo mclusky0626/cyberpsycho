@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       STAGE 5 — Cyber-Suppressant "high".
+       While this is active, HediffComp_CyberStrain pushes cyber
+       strain DOWN. It decays over ~2 days, so doses must be repeated.
+       ============================================================ -->
+  <HediffDef>
+    <defName>CyberSuppressantHigh</defName>
+    <hediffClass>Hediff_High</hediffClass>
+    <label>suppressed</label>
+    <labelNoun>cyber-suppression</labelNoun>
+    <description>Neural dampeners are flooding the system, forcing the cybernetics back under conscious control. The effect fades within a couple of days.</description>
+    <defaultLabelColor>(0.5,0.9,0.7)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.5</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       STAGE 5 — Cyber-Suppressant tolerance.
+       Each dose bumps this up; the higher it climbs, the less the
+       suppressant pushes strain down. Past the fail point the drug
+       stops working and strain rises even while dosed. Decays slowly
+       when the pawn stops taking it. Driven by HediffComp_CyberStrain.
+       ============================================================ -->
+  <HediffDef>
+    <defName>CyberSuppressantTolerance</defName>
+    <label>suppressant tolerance</label>
+    <labelNoun>suppressant tolerance</labelNoun>
+    <description>The nervous system has adapted to neural dampeners. Each dose does less than the last; eventually the suppressant fails entirely and strain climbs regardless, often ending in cyberpsychosis. Lay off the drug to let tolerance fade.</description>
+    <defaultLabelColor>(0.9,0.75,0.45)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>0.001</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <tendable>false</tendable>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.02</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>minimal</label>
+        <minSeverity>0</minSeverity>
+      </li>
+      <li>
+        <label>building</label>
+        <minSeverity>0.4</minSeverity>
+      </li>
+      <li>
+        <label>severe</label>
+        <minSeverity>0.7</minSeverity>
+      </li>
+      <li>
+        <label>drug ineffective</label>
+        <minSeverity>0.85</minSeverity>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Cyber-Suppressant addiction (Luciferium-style dependency) -->
+  <HediffDef ParentName="AddictionBase">
+    <defName>CyberSuppressantAddiction</defName>
+    <label>suppressant dependence</label>
+    <description>The nervous system has rewired itself around regular suppressant doses. Without them, neural dampening collapses and cyber strain surges out of control — often straight into cyberpsychosis.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <chemicalNeed>Chemical_CyberSuppressant</chemicalNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.025</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li />
+      <li>
+        <label>withdrawal</label>
+        <painFactor>2</painFactor>
+        <hungerRateFactorOffset>0.3</hungerRateFactorOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.85</setMax>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>CyberPsychosis</mentalState>
+            <mtbDays>0.6</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <CyberPsycho.PsychosisReason>Cyber strain exceeded the breaking point.</CyberPsycho.PsychosisReason>
+
+  <CyberPsycho.StrainTip>Cyber strain: {0} (breaking point {1})\nInstalled cyber load: {2}</CyberPsycho.StrainTip>
+
+  <CyberPsycho.Gizmo.Label>Cyber strain</CyberPsycho.Gizmo.Label>
+  <CyberPsycho.Gizmo.Tooltip>Cyber strain: {0}\nBreaking point: {1}\nInstalled cyber load: {2}\n\nKeep strain below the breaking point. Dose cyber-suppressant to push it down; missing doses while dependent makes it surge.</CyberPsycho.Gizmo.Tooltip>
+
+  <CyberPsycho.Alert.Label>Cyberpsychosis imminent</CyberPsycho.Alert.Label>
+  <CyberPsycho.Alert.Explanation>These colonists are close to their cyberpsychosis breaking point:\n{0}\n\nDose them with cyber-suppressant or remove cybernetics before they snap.</CyberPsycho.Alert.Explanation>
+
+  <CyberPsycho.Settings.RiskMultiplier>Strain build-up rate: {0}</CyberPsycho.Settings.RiskMultiplier>
+  <CyberPsycho.Settings.ThresholdOffset>Global breaking-point offset: {0}</CyberPsycho.Settings.ThresholdOffset>
+  <CyberPsycho.Settings.AffectsPrisoners>Prisoners can suffer cyberpsychosis</CyberPsycho.Settings.AffectsPrisoners>
+  <CyberPsycho.Settings.CountAllImplants>Auto-detect all bionics/implants (incl. modded)</CyberPsycho.Settings.CountAllImplants>
+  <CyberPsycho.Settings.AutoImplantValue>Cyber value per auto-detected implant: {0}</CyberPsycho.Settings.AutoImplantValue>
+
+</LanguageData>

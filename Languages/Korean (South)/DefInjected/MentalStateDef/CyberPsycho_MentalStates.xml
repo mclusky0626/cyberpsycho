@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <CyberPsychosis.label>사이버사이코시스</CyberPsychosis.label>
+  <CyberPsychosis.beginLetterLabel>사이버사이코시스</CyberPsychosis.beginLetterLabel>
+  <CyberPsychosis.beginLetter>{0}이(가) 사이버사이코시스에 빠졌습니다.\n\n기계가 신체를 장악했습니다. [PAWN_pronoun]은(는) 보이는 모든 대상을 공격하며, 인간의 한계를 넘어 움직이고 가격하고, 고통을 느끼지 못합니다.</CyberPsychosis.beginLetter>
+  <CyberPsychosis.recoveryMessage>{0}의 사이버사이코시스 발작이 끝났습니다.</CyberPsychosis.recoveryMessage>
+  <CyberPsychosis.baseInspectLine>정신 상태: 사이버사이코시스</CyberPsychosis.baseInspectLine>
+
+</LanguageData>

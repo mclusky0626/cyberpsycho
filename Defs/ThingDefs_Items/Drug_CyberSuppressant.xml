@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       STAGE 5 — Cyber-Suppressant drug item.
+       Reuses the vanilla Luciferium pill texture so it shows an icon
+       out of the box; drop your own art at Textures/Things/Item/Drug/
+       CyberSuppressant and change texPath to use it.
+       ============================================================ -->
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>CyberSuppressant</defName>
+    <label>cyber-suppressant</label>
+    <description>A capsule of neural dampeners that forces rogue cybernetics back under conscious control, holding cyber strain down. The body adapts to it quickly, so doses must be repeated every day or two — and missing them is dangerous for the heavily augmented.</description>
+    <descriptionHyperlinks>
+      <HediffDef>CyberSuppressantHigh</HediffDef>
+      <HediffDef>CyberSuppressantAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drug/Luciferium</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>800</WorkToMake>
+      <MarketValue>42</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Hard</drugCategory>
+      <foodType>Processed</foodType>
+      <baseIngestTicks>120</baseIngestTicks>
+      <ingestSound>Ingest_Pill</ingestSound>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>CyberSuppressantHigh</hediffDef>
+          <severity>1.0</severity>
+          <toleranceChemical>CyberSuppressant</toleranceChemical>
+          <doToGeneratedPawnIfAddicted>true</doToGeneratedPawnIfAddicted>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>CyberStabilization</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>1600</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>3</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>CyberSuppressant</chemical>
+        <addictiveness>0.10</addictiveness>
+        <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>1015</listOrder>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>

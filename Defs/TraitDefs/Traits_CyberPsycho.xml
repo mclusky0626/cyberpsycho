@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- STAGE 7 — personality interaction with cyber strain.
+       The C# threshold logic reads Degree: +1 raises the breaking
+       point, -1 lowers it. -->
+  <TraitDef>
+    <defName>CyberStability</defName>
+    <commonality>1.0</commonality>
+    <degreeDatas>
+      <li>
+        <label>cyber-fragile</label>
+        <description>[PAWN_nameDef] has never been comfortable sharing a body with machines. [PAWN_pronoun] reaches cyberpsychosis from far less augmentation than most.</description>
+        <degree>-1</degree>
+        <commonality>1.0</commonality>
+      </li>
+      <li>
+        <label>cyber-stable</label>
+        <description>[PAWN_nameDef] feels more at home as a machine than as a human. It takes a great deal of augmentation to push [PAWN_objective] toward cyberpsychosis.</description>
+        <degree>1</degree>
+        <commonality>1.0</commonality>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  <!-- STAGE 7 — "the Chosen". A rare one-in-a-thousand nervous system that
+       barely registers the chrome. The C# threshold logic gives this trait a
+       massive breaking-point bonus (well past 200%), so they can run almost
+       unlimited augmentation before cyberpsychosis becomes a risk. -->
+  <TraitDef>
+    <defName>CyberChosen</defName>
+    <commonality>0.12</commonality>
+    <degreeDatas>
+      <li>
+        <label>the Chosen</label>
+        <description>[PAWN_nameDef] was born to wear chrome. Where others fracture under a handful of implants, [PAWN_pronoun] could replace nearly [PAWN_possessive] whole body and stay perfectly [PAWN_pronoun]self. Cyberpsychosis is almost beyond [PAWN_objective].</description>
+        <degree>0</degree>
+        <commonality>0.12</commonality>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>

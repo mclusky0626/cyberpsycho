@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>jjomang.cyberpsycho</packageId>
+  <name>Cyberpsycho (사이버사이코)</name>
+  <author>jjomang</author>
+  <description>Installing cybernetic implants raises a colonist's "cyber strain". Push it past their personal threshold and they snap into cyberpsychosis — a berserk rage with massively boosted combat stats that attacks everything in sight. Craft and dose the Cyber-Suppressant to hold the strain in check, Luciferium-style: skip your doses and the strain surges.
+
+Inspired by Cyberpunk 2077's cyberpsychosis.
+
+Features:
+- Every bionic / archotech / brain implant adds cyber strain (configurable via a ModExtension).
+- Per-pawn thresholds, trait and psychopath interactions.
+- Cyberpsychosis mental state: super-speed, doubled melee damage, ignores pain.
+- Cyber-Suppressant drug with a Luciferium-style dependency loop.
+- On-pawn strain gauge, warning alert, and mod settings for balance.
+
+Requires Harmony.</description>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+</ModMetaData>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ChemicalDef>
+    <defName>CyberSuppressant</defName>
+    <label>cyber-suppressant</label>
+    <addictionHediff>CyberSuppressantAddiction</addictionHediff>
+    <generateAddictionGenes>false</generateAddictionGenes>
+  </ChemicalDef>
+
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_CyberSuppressant</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>cyber-suppressant</label>
+    <description>Because of a suppressant dependence, this person must take cyber-suppressant regularly. Without it, cyber strain spikes and cyberpsychosis becomes likely.</description>
+    <fallPerDay>0.5</fallPerDay>
+    <listPriority>44</listPriority>
+  </NeedDef>
+
+</Defs>

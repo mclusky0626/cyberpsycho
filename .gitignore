@@ -1,0 +1,11 @@
+# Build intermediates
+Source/**/obj/
+Source/**/bin/
+*.user
+*.suo
+
+# Compiled output is checked in so the mod is playable without building.
+# Comment the next line out if you prefer to keep the DLL out of git.
+# Assemblies/
+
+.DS_Store

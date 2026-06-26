@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <CyberPsycho.PsychosisReason>사이버 수치가 임계점을 넘었습니다.</CyberPsycho.PsychosisReason>
+
+  <CyberPsycho.StrainTip>사이버 수치: {0} (임계점 {1})\n장착된 사이버 부하: {2}</CyberPsycho.StrainTip>
+
+  <CyberPsycho.Gizmo.Label>사이버 수치</CyberPsycho.Gizmo.Label>
+  <CyberPsycho.Gizmo.Tooltip>사이버 수치: {0}\n임계점: {1}\n장착된 사이버 부하: {2}\n\n수치를 임계점 아래로 유지하세요. 사이버 억제제를 복용하면 수치가 내려가며, 의존 상태에서 복용을 거르면 수치가 급등합니다.</CyberPsycho.Gizmo.Tooltip>
+
+  <CyberPsycho.Alert.Label>사이코시스 임박</CyberPsycho.Alert.Label>
+  <CyberPsycho.Alert.Explanation>다음 정착민들이 사이코시스 임계점에 근접했습니다:\n{0}\n\n사이버 억제제를 복용시키거나 임플란트를 제거해 폭주를 막으세요.</CyberPsycho.Alert.Explanation>
+
+  <CyberPsycho.Settings.RiskMultiplier>수치 상승 속도: {0}</CyberPsycho.Settings.RiskMultiplier>
+  <CyberPsycho.Settings.ThresholdOffset>전역 임계점 보정: {0}</CyberPsycho.Settings.ThresholdOffset>
+  <CyberPsycho.Settings.AffectsPrisoners>죄수도 사이코시스에 빠질 수 있음</CyberPsycho.Settings.AffectsPrisoners>
+  <CyberPsycho.Settings.CountAllImplants>모든 바이오닉/임플란트 자동 감지 (모드 포함)</CyberPsycho.Settings.CountAllImplants>
+  <CyberPsycho.Settings.AutoImplantValue>자동 감지 임플란트당 사이버 값: {0}</CyberPsycho.Settings.AutoImplantValue>
+
+</LanguageData>

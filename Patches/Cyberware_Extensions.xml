@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ============================================================
+       STAGE 1/2 — attach a CyberwareExtension (cyber value) to each
+       vanilla implant. HediffComp_CyberStrain sums these across a
+       pawn's installed cybernetics to drive cyber strain.
+
+       Values are deliberately heavy: an ordinary pawn (breaking point
+       ~0.85) should be in real danger after only 2-3 implants.
+         standard bionics    ~0.30-0.36
+         brain implants      ~0.42-0.45  (most dehumanizing)
+         archotech           ~0.55-0.60  (alien tech, worst strain)
+
+       Modded implants without an explicit value here are auto-detected
+       and tiered by tech level in CyberStrainUtility.CyberValueOf.
+       To override a modded implant, add the same <li> to its HediffDef.
+       ============================================================ -->
+
+  <!-- Standard bionics -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicArm"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.34</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicLeg"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.34</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicEye"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.30</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicEar"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.24</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicHeart"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.34</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicSpine"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.36</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicStomach"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.30</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicJaw"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.18</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="BionicTongue"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.15</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="PowerClaw"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.32</cyberValue></li></value>
+  </Operation>
+
+  <!-- Brain implants: most dehumanizing, highest non-archotech strain -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="Painstopper"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.45</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="Joywire"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.42</cyberValue></li></value>
+  </Operation>
+
+  <!-- Archotech: alien tech, very high strain -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="ArchotechArm"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.60</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="ArchotechLeg"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.60</cyberValue></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/HediffDef[defName="ArchotechEye"]</xpath>
+    <value><li Class="CyberPsycho.CyberwareExtension"><cyberValue>0.55</cyberValue></li></value>
+  </Operation>
+
+</Patch>

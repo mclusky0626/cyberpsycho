@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       STAGE 1 — Core data structure.
+       The cyber-strain Hediff is the "cyber value" gauge. Its
+       severity (0..1.5) is driven every tick by HediffComp_CyberStrain.
+       ============================================================ -->
+  <HediffDef>
+    <defName>CyberStrain</defName>
+    <label>cyber strain</label>
+    <labelNoun>cyber strain</labelNoun>
+    <description>The mind's growing struggle to stay in control of a body full of machines. As more cybernetics are installed, strain rises. If it crosses this person's breaking point, they lose themselves to cyberpsychosis.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.55,0.85,1)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>0.001</initialSeverity>
+    <!-- Ceiling sits just above the Chosen's breaking point (~2.25) so they only
+         risk an episode at extreme augmentation; ordinary pawns break at ~0.85. -->
+    <maxSeverity>2.35</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <tendable>false</tendable>
+    <comps>
+      <li Class="CyberPsycho.HediffCompProperties_CyberStrain">
+        <intervalTicks>250</intervalTicks>
+        <riskPerCyberValuePerDay>0.60</riskPerCyberValuePerDay>
+        <suppressedFallPerDay>0.60</suppressedFallPerDay>
+        <baselineFallPerDay>0.08</baselineFallPerDay>
+        <withdrawalSurgeFactor>2.5</withdrawalSurgeFactor>
+        <installSpike>0.04</installSpike>
+        <baseThreshold>0.85</baseThreshold>
+        <thresholdVariance>0.08</thresholdVariance>
+        <mtbDaysAtThreshold>1.2</mtbDaysAtThreshold>
+        <mtbDaysAtMax>0.15</mtbDaysAtMax>
+        <!-- How far above the breaking point the MTB ramps from slow to fast.
+             Kept independent of maxSeverity so raising the cap (for the Chosen)
+             doesn't slow down ordinary pawns' episodes. -->
+        <mtbRampSpan>0.55</mtbRampSpan>
+        <episodeReliefFactor>0.4</episodeReliefFactor>
+        <warnDelta>0.10</warnDelta>
+        <!-- Suppressant tolerance: each dose adds this; the drug loses this much
+             effectiveness per point of tolerance; past failPoint it stops
+             working entirely and strain climbs even while dosed. -->
+        <tolerancePerDose>0.08</tolerancePerDose>
+        <toleranceFailPoint>0.85</toleranceFailPoint>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>stable</label>
+        <minSeverity>0</minSeverity>
+      </li>
+      <li>
+        <label>agitated</label>
+        <minSeverity>0.30</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.02</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>unstable</label>
+        <minSeverity>0.60</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>critical</label>
+        <minSeverity>0.85</minSeverity>
+        <painOffset>0.10</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       STAGE 4 — Cyberpsychosis stat boost.
+       Applied by MentalState_CyberPsychosis while the rage lasts;
+       removed when it ends. Super-speed, doubled melee, pain ignored.
+       ============================================================ -->
+  <HediffDef>
+    <defName>CyberPsychosisBoost</defName>
+    <label>cyberpsychotic surge</label>
+    <description>Combat subroutines have seized control. Pain means nothing; the body moves and strikes far beyond its normal limits.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1,0.2,0.3)</defaultLabelColor>
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <tendable>false</tendable>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <painFactor>0</painFactor>
+        <statOffsets>
+          <PainShockThreshold>1.0</PainShockThreshold>
+        </statOffsets>
+        <statFactors>
+          <MoveSpeed>1.5</MoveSpeed>
+          <MeleeDamageFactor>2.0</MeleeDamageFactor>
+          <MeleeHitChance>1.25</MeleeHitChance>
+          <IncomingDamageFactor>0.65</IncomingDamageFactor>
+          <!-- AimingDelayFactor is a flat (never-disabled) stat, so it's safe to
+               buff for every pawn. ShootingAccuracyPawn was removed: it is a
+               skill-gated stat and errors when read on a shooting-disabled pawn. -->
+          <AimingDelayFactor>0.5</AimingDelayFactor>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       STAGE 5 — neural burnout. The price of an overclocked body:
+       after a cyberpsychotic episode ends, the pawn is wrecked for
+       most of a day. Applied by MentalState_CyberPsychosis.PostEnd.
+       ============================================================ -->
+  <HediffDef>
+    <defName>CyberBurnout</defName>
+    <label>neural burnout</label>
+    <description>The body is paying for the overclock. Cybernetics ran far past their safe limits during the episode; now the nervous system is scorched and sluggish while it reboots.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8,0.5,0.2)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <tendable>false</tendable>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>40000~50000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painOffset>0.15</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.25</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

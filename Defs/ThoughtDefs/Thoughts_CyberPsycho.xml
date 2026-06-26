@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       STAGE 5 — aftermath. An episode leaves scars: the cyberpsycho
+       remembers what they did, and witnesses are shaken.
+       ============================================================ -->
+
+  <!-- Memory carried by the pawn who snapped. Psychopaths don't care. -->
+  <ThoughtDef>
+    <defName>CyberPsychoticEpisode</defName>
+    <durationDays>6</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>cyberpsychotic episode</label>
+        <description>I lost control. The chrome took over and made me hurt people. I can still feel it waiting under my skin.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Memory for colonists who watched a comrade turn into a killing machine. -->
+  <ThoughtDef>
+    <defName>WitnessedCyberpsycho</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>saw a cyberpsycho</label>
+        <description>I watched someone I knew snap and become a chrome-plated killing machine. It could be any of us next.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

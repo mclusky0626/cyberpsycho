@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- STAGE 7 — research gate for the suppressant -->
+  <ResearchProjectDef>
+    <defName>CyberStabilization</defName>
+    <label>cyber-stabilization</label>
+    <description>Reverse-engineer the neural feedback loops behind cyberpsychosis to synthesize cyber-suppressant: a drug that forces rogue cybernetics back under conscious control.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>10</researchViewX>
+    <researchViewY>2.5</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

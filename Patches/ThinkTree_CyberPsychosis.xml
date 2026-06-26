@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ============================================================
+       STAGE 4 — cyberpsychosis combat AI. Unlike vanilla Berserk
+       (which is melee-only, JobGiver_Berserk), a cyberpsycho is a
+       weapon-wielding killing machine: they shoot with ranged guns,
+       chase, and attack any living thing they can reach. Because the
+       pawn is in an Aggro mental state, JobGiver_AIFightEnemies will
+       target friend and foe alike.
+
+       Priority order:
+         1. JobGiver_CyberPsychoAssault — custom: shoot with ranged guns
+            (stable, no weapon-flicker), move to firing position, or melee.
+         2. JobGiver_Berserk            — unarmed fallback (fists)
+         3. JobGiver_WanderAnywhere     — nothing in sight: prowl
+
+       NOTE: we do NOT use vanilla JobGiver_AIFightEnemies here. Without a
+       Lord/duty (which mental states lack) it jitters — the pawn raises and
+       lowers the gun without firing. The custom JobGiver issues a stable shot.
+
+       The vanilla MentalStateCritical tree gates behavior by specific
+       state def, so we add a matching branch for our state.
+       ============================================================ -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
+    <value>
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>CyberPsychosis</state>
+        <subNodes>
+          <li Class="ThinkNode_Priority">
+            <subNodes>
+              <li Class="CyberPsycho.JobGiver_CyberPsychoAssault" />
+              <li Class="JobGiver_Berserk" />
+              <li Class="JobGiver_WanderAnywhere">
+                <maxDanger>Deadly</maxDanger>
+              </li>
+            </subNodes>
+          </li>
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

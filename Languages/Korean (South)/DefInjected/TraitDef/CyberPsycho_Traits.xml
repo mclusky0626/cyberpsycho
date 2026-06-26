@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <CyberStability.degreeDatas.0.label>사이버 취약</CyberStability.degreeDatas.0.label>
+  <CyberStability.degreeDatas.0.description>[PAWN_nameDef]은(는) 기계와 몸을 공유하는 것을 한 번도 편하게 여긴 적이 없다. 대부분보다 훨씬 적은 증강만으로도 사이버사이코시스에 도달한다.</CyberStability.degreeDatas.0.description>
+  <CyberStability.degreeDatas.1.label>사이버 안정</CyberStability.degreeDatas.1.label>
+  <CyberStability.degreeDatas.1.description>[PAWN_nameDef]은(는) 인간보다 기계로서 더 편안함을 느낀다. [PAWN_objective]을(를) 사이버사이코시스로 몰아넣으려면 막대한 증강이 필요하다.</CyberStability.degreeDatas.1.description>
+
+  <CyberChosen.degreeDatas.0.label>선택받은 자</CyberChosen.degreeDatas.0.label>
+  <CyberChosen.degreeDatas.0.description>[PAWN_nameDef]은(는) 크롬을 두르기 위해 태어났다. 남들은 임플란트 몇 개에 무너지지만, [PAWN_pronoun]은(는) 몸 거의 전체를 기계로 바꾸고도 완벽하게 자기 자신으로 남는다. 사이버사이코시스는 [PAWN_objective]에게 거의 닿지 않는다.</CyberChosen.degreeDatas.0.description>
+
+</LanguageData>
