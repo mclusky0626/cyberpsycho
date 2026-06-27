@@ -3,6 +3,8 @@
 
   <CyberPsycho.PsychosisReason>Cyber strain exceeded the breaking point.</CyberPsycho.PsychosisReason>
 
+  <CyberPsycho.Quelled>Quelled!</CyberPsycho.Quelled>
+
   <CyberPsycho.StrainTip>Cyber strain: {0} (breaking point {1})\nInstalled cyber load: {2}</CyberPsycho.StrainTip>
 
   <CyberPsycho.Gizmo.Label>Cyber strain</CyberPsycho.Gizmo.Label>
@@ -16,5 +18,7 @@
   <CyberPsycho.Settings.AffectsPrisoners>Prisoners can suffer cyberpsychosis</CyberPsycho.Settings.AffectsPrisoners>
   <CyberPsycho.Settings.CountAllImplants>Auto-detect all bionics/implants (incl. modded)</CyberPsycho.Settings.CountAllImplants>
   <CyberPsycho.Settings.AutoImplantValue>Cyber value per auto-detected implant: {0}</CyberPsycho.Settings.AutoImplantValue>
+  <CyberPsycho.Settings.AutoDose>Colonists auto-dose suppressant near their breaking point</CyberPsycho.Settings.AutoDose>
+  <CyberPsycho.Settings.AutoDoseMargin>Auto-dose when strain is within this much of the breaking point: {0}</CyberPsycho.Settings.AutoDoseMargin>
 
 </LanguageData>

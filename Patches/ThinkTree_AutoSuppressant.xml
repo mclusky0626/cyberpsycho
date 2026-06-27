@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ============================================================
+       STAGE 5 — auto-medication. Prepend the suppressant job giver to
+       the top of the Humanlike think tree so a colonist near their
+       breaking point drops what they're doing and takes a dose before
+       cyberpsychosis hits. The job giver itself is tightly gated (only
+       near threshold, not drafted, drug available, etc.), so for the
+       vast majority of think cycles it returns null immediately.
+       ============================================================ -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes</xpath>
+    <order>Prepend</order>
+    <value>
+      <li Class="CyberPsycho.JobGiver_TakeCyberSuppressant" />
+    </value>
+  </Operation>
+
+</Patch>

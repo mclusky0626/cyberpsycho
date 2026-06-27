@@ -15,6 +15,9 @@
   <CyberBurnout.label>신경 번아웃</CyberBurnout.label>
   <CyberBurnout.description>오버클럭의 대가를 몸이 치르고 있다. 발작 중 사이버네틱이 안전 한계를 한참 넘어 가동되었고, 이제 신경계가 재부팅되는 동안 그을리고 둔해진 상태다.</CyberBurnout.description>
 
+  <NeuralScar.label>신경 손상</NeuralScar.label>
+  <NeuralScar.description>강제 사이버네틱 차단으로 신경 경로가 타버렸다. 손상은 영구적이며, 정신은 다시는 예전처럼 돌아가지 않는다.</NeuralScar.description>
+
   <CyberSuppressantHigh.label>억제됨</CyberSuppressantHigh.label>
   <CyberSuppressantHigh.labelNoun>사이버 억제</CyberSuppressantHigh.labelNoun>
   <CyberSuppressantHigh.description>신경 억제제가 체내에 퍼져 사이버네틱을 의식적 통제 아래로 되돌린다. 효과는 하루 이틀 안에 사라진다.</CyberSuppressantHigh.description>

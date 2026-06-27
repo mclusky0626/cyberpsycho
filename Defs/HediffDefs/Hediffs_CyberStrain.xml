@@ -135,6 +135,34 @@
   </HediffDef>
 
   <!-- ============================================================
+       STAGE 6 — permanent neural scarring. Inflicted by the neural-quell
+       lance's forced shutdown. Never heals; stacks with each forced quell.
+       ============================================================ -->
+  <HediffDef>
+    <defName>NeuralScar</defName>
+    <label>neural scarring</label>
+    <description>Neural pathways were burned out by a forced cybernetic shutdown. The damage is permanent — the mind never fully runs the same again.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.7,0.4,0.5)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <tendable>false</tendable>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.12</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
        STAGE 5 — neural burnout. The price of an overclocked body:
        after a cyberpsychotic episode ends, the pawn is wrecked for
        most of a day. Applied by MentalState_CyberPsychosis.PostEnd.

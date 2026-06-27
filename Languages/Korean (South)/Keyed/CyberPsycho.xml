@@ -3,6 +3,8 @@
 
   <CyberPsycho.PsychosisReason>사이버 수치가 임계점을 넘었습니다.</CyberPsycho.PsychosisReason>
 
+  <CyberPsycho.Quelled>진정됨!</CyberPsycho.Quelled>
+
   <CyberPsycho.StrainTip>사이버 수치: {0} (임계점 {1})\n장착된 사이버 부하: {2}</CyberPsycho.StrainTip>
 
   <CyberPsycho.Gizmo.Label>사이버 수치</CyberPsycho.Gizmo.Label>
@@ -16,5 +18,7 @@
   <CyberPsycho.Settings.AffectsPrisoners>죄수도 사이코시스에 빠질 수 있음</CyberPsycho.Settings.AffectsPrisoners>
   <CyberPsycho.Settings.CountAllImplants>모든 바이오닉/임플란트 자동 감지 (모드 포함)</CyberPsycho.Settings.CountAllImplants>
   <CyberPsycho.Settings.AutoImplantValue>자동 감지 임플란트당 사이버 값: {0}</CyberPsycho.Settings.AutoImplantValue>
+  <CyberPsycho.Settings.AutoDose>정착민이 임계점 근처에서 억제제를 자동 복용</CyberPsycho.Settings.AutoDose>
+  <CyberPsycho.Settings.AutoDoseMargin>임계점과 이만큼 차이 이내일 때 자동 복용: {0}</CyberPsycho.Settings.AutoDoseMargin>
 
 </LanguageData>

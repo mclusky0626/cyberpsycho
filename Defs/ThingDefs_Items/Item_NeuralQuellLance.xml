@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       STAGE 6 — neural-quell lance. A single-use device built like a
+       psychic shock lance: select it, target a raging cyberpsycho, and
+       a colonist carries it over and fires. It ends the episode but
+       force-sedates the pawn (knocked out) and leaves permanent neural
+       scarring. Wiring: CompUsable (use job) + CompTargetable_SinglePawn
+       subclass (cyberpsycho-only) + custom target effect.
+
+       Placeholder art borrows the spacer component icon; drop your own
+       PNG at Textures/Things/Item/NeuralQuellLance and change texPath.
+       ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>NeuralQuellLance</defName>
+    <label>neural-quell lance</label>
+    <description>A single-use neural override device. Fired at a cyberpsycho mid-episode, it force-sedates the runaway cybernetics and snaps the mind back under control. The violent shutdown leaves the body unconscious, badly burned out, and permanently scarred — but it beats putting them down.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/Item/Resource/ComponentSpacer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MarketValue>340</MarketValue>
+      <Mass>0.6</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseArtifact</useJob>
+        <useLabel>Use {0_label} on cyberpsycho</useLabel>
+        <useDuration>150</useDuration>
+      </li>
+      <li Class="CompProperties_Targetable">
+        <compClass>CyberPsycho.CompTargetable_Cyberpsycho</compClass>
+      </li>
+      <li Class="CyberPsycho.CompProperties_NeuralQuell" />
+    </comps>
+    <recipeMaker>
+      <researchPrerequisite>CyberStabilization</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <workAmount>9000</workAmount>
+      <displayPriority>1700</displayPriority>
+    </recipeMaker>
+    <costList>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Plasteel>15</Plasteel>
+      <Neutroamine>10</Neutroamine>
+    </costList>
+  </ThingDef>
+
+</Defs>

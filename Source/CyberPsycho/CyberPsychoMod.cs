@@ -12,6 +12,8 @@ namespace CyberPsycho
         public bool affectsPrisoners = true;
         public bool countAllImplants = true;
         public float autoImplantValue = 0.30f;
+        public bool autoDoseSuppressant = true;
+        public float autoDoseMargin = 0.20f;
 
         public override void ExposeData()
         {
@@ -20,6 +22,8 @@ namespace CyberPsycho
             Scribe_Values.Look(ref affectsPrisoners, "affectsPrisoners", true);
             Scribe_Values.Look(ref countAllImplants, "countAllImplants", true);
             Scribe_Values.Look(ref autoImplantValue, "autoImplantValue", 0.30f);
+            Scribe_Values.Look(ref autoDoseSuppressant, "autoDoseSuppressant", true);
+            Scribe_Values.Look(ref autoDoseMargin, "autoDoseMargin", 0.20f);
             base.ExposeData();
         }
     }
@@ -59,6 +63,14 @@ namespace CyberPsycho
             {
                 l.Label("CyberPsycho.Settings.AutoImplantValue".Translate(Settings.autoImplantValue.ToStringPercent()));
                 Settings.autoImplantValue = Mathf.Round(l.Slider(Settings.autoImplantValue, 0.01f, 0.4f) * 100f) / 100f;
+            }
+            l.Gap();
+
+            l.CheckboxLabeled("CyberPsycho.Settings.AutoDose".Translate(), ref Settings.autoDoseSuppressant);
+            if (Settings.autoDoseSuppressant)
+            {
+                l.Label("CyberPsycho.Settings.AutoDoseMargin".Translate(Settings.autoDoseMargin.ToStringPercent()));
+                Settings.autoDoseMargin = Mathf.Round(l.Slider(Settings.autoDoseMargin, 0.05f, 0.5f) * 100f) / 100f;
             }
 
             l.End();

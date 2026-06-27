@@ -4,4 +4,7 @@
   <CyberSuppressant.label>사이버 억제제</CyberSuppressant.label>
   <CyberSuppressant.description>폭주하는 사이버네틱을 의식적 통제 아래로 되돌려 사이버 수치를 억누르는 신경 억제제 캡슐. 몸이 빠르게 적응하므로 하루나 이틀마다 다시 복용해야 하며, 증강이 심한 사람이 복용을 거르면 위험하다.</CyberSuppressant.description>
 
+  <NeuralQuellLance.label>신경 진정 랜스</NeuralQuellLance.label>
+  <NeuralQuellLance.description>1회용 신경 강제진정 장치. 발작 중인 사이버사이코에게 발사하면 폭주하는 사이버네틱을 강제로 진정시키고 정신을 다시 통제 아래로 끌어온다. 강제 차단의 충격으로 대상은 기절하고, 심하게 번아웃되며, 영구적인 신경 손상이 남는다 — 그래도 사살하는 것보단 낫다.</NeuralQuellLance.description>
+
 </LanguageData>
